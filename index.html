@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A research roadmap for inclusive speech technology: dysarthric speech, children's speech, speaker verification, and robust low-resource speech processing.">
+<title>Inclusive Speech Intelligence | Research Roadmap</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2e;--panel2:#17223a;--ink:#edf3ff;--muted:#b5c1d8;--line:#2b3955;--cyan:#75e0d2;--blue:#9cbcff;--gold:#ffd48a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#0b1020,#101a2b 55%,#0b1020);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1120px;margin:auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,16,32,.92);backdrop-filter:blur(10px);z-index:5}
+nav{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap}.brand{font-weight:800;letter-spacing:.3px}.navlinks{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}
+.hero{padding:80px 0 54px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:800}
+h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.04;letter-spacing:-2px;margin:16px 0 22px;max-width:900px}
+.lead{font-size:1.2rem;color:var(--muted);max-width:800px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.btn{display:inline-block;border:1px solid var(--line);padding:11px 16px;border-radius:12px;font-weight:700}.btn.primary{background:var(--cyan);color:#06141a;border-color:var(--cyan)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}.metric,.card,.idea,.phase,.source{background:rgba(18,26,46,.9);border:1px solid var(--line);border-radius:18px;padding:20px}.metric strong{display:block;font-size:1.15rem;color:var(--blue)}.metric span{color:var(--muted);font-size:.9rem}
+section{padding:52px 0}h2{font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.15;margin:0 0 12px;letter-spacing:-.8px}h3{margin:0 0 8px;font-size:1.18rem}p{margin:8px 0;color:var(--muted)}.section-intro{max-width:780px;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card .tag,.tag{display:inline-block;border:1px solid #35506c;color:var(--cyan);border-radius:999px;padding:3px 9px;font-size:.75rem;font-weight:700;margin-bottom:10px}
+.card ul,.idea ul{padding-left:19px;color:var(--muted);margin:10px 0}.card li,.idea li{margin:5px 0}
+.callout{border-left:3px solid var(--gold);padding:14px 18px;background:rgba(255,212,138,.07);border-radius:0 12px 12px 0;color:var(--muted);margin-top:20px}
+.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.idea{position:relative;overflow:hidden}.idea .num{color:var(--cyan);font-weight:900;font-size:.82rem;letter-spacing:1px}.idea h3{font-size:1.3rem;margin-top:8px}.meta{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.meta span{font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.phase{padding:16px}.phase b{display:block;color:var(--blue);margin-bottom:7px}.phase p{font-size:.92rem}
+table{width:100%;border-collapse:collapse;margin-top:14px;background:rgba(18,26,46,.7);border-radius:14px;overflow:hidden}th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--cyan);font-size:.88rem}td{color:var(--muted);font-size:.94rem}
+.sources{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.source{padding:16px}.source p{font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:28px 0 42px;color:var(--muted);font-size:.9rem}
+.small{font-size:.88rem}.muted{color:var(--muted)}.highlight{color:var(--gold)}
+@media(max-width:800px){.metrics{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.ideas{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.sources{grid-template-columns:1fr}.hero{padding-top:55px}.navlinks{gap:10px}}
+@media(max-width:440px){.metrics,.flow{grid-template-columns:1fr}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav><a class="brand" href="#top">Inclusive Speech Intelligence</a><div class="navlinks"><a href="#areas">Research areas</a><a href="#problems">Open problems</a><a href="#plan">Research plan</a><a href="#references">References</a></div></nav></div></header>
+<main id="top">
+<div class="wrap">
+<section class="hero">
+<div class="eyebrow">Research roadmap · November 2026</div>
+<h1>Speech technology that works for <span style="color:var(--cyan)">every voice.</span></h1>
+<p class="lead">A research agenda built around atypical and under-represented speech: dysarthric speakers, children, low-resource conditions, and reliable voice biometrics. The aim is to move from isolated accuracy gains toward systems that generalize, explain their errors, protect users, and work with limited data.</p>
+<div class="hero-actions"><a class="btn primary" href="#problems">Explore research problems ↓</a><a class="btn" href="https://scholar.google.com/citations?user=HttYbpQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile ↗</a></div>
+<div class="metrics">
+<div class="metric"><strong>Inclusive biometrics</strong><span>Dysarthric speaker verification</span></div>
+<div class="metric"><strong>Child-centred ASR</strong><span>Age and vocal-tract mismatch</span></div>
+<div class="metric"><strong>Data efficiency</strong><span>Augmentation and SSL transfer</span></div>
+<div class="metric"><strong>Trustworthy systems</strong><span>Robustness, privacy, calibration</span></div>
+</div>
+</section>
+
+<section id="areas">
+<div class="eyebrow">01 · Established strengths</div><h2>Research areas visible in the publication record</h2>
+<p class="section-intro">The linked profile was not fully retrievable directly because Google Scholar rate-limited access. These themes are based on publication records cross-checked against independent scholarly indexes and publisher pages; they should be treated as a verified sample, not a complete profile audit.</p>
+<div class="grid">
+<article class="card"><span class="tag">Core theme</span><h3>Dysarthric speaker verification</h3><p>Determine whether two speech recordings come from the same speaker when articulation, phonation, rhythm, and intelligibility differ from typical speech.</p><ul><li>Voice biometrics for accessibility</li><li>Speaker embeddings and temporal cues</li><li>Severity-aware evaluation</li></ul></article>
+<article class="card"><span class="tag">Core theme</span><h3>Acoustic features and fusion</h3><p>Explore which parts of the speech spectrum and prosody remain useful when conventional assumptions about speech production break down.</p><ul><li>MFCC, LFCC, CQCC and multitaper features</li><li>Prosodic and spectral fusion</li><li>High-frequency information</li></ul></article>
+<article class="card"><span class="tag">Core theme</span><h3>Speech data augmentation</h3><p>Increase effective training diversity when labelled speech from the target population is scarce.</p><ul><li>Duration and rate modification</li><li>Voice-conversion augmentation</li><li>Out-of-domain training data</li></ul></article>
+<article class="card"><span class="tag">Related theme</span><h3>Children's speech processing</h3><p>Address acoustic mismatch between adult-trained systems and children's speech, where pitch, vocal-tract size, pronunciation and language use vary with age.</p><ul><li>Low-/zero-resource ASR</li><li>Children's speaker verification</li><li>Age-aware adaptation</li></ul></article>
+<article class="card"><span class="tag">Related theme</span><h3>Robust speech analysis</h3><p>Use signal-processing representations and front ends to improve robustness under noise and difficult acoustic conditions.</p><ul><li>Bispectrum-based features</li><li>Vowel detection</li><li>Filterbank design for high-pitched voices</li></ul></article>
+<article class="card"><span class="tag">Opportunity</span><h3>Modern speech foundation models</h3><p>Connect established signal-processing knowledge with self-supervised models such as wav2vec 2.0, HuBERT and WavLM.</p><ul><li>Parameter-efficient adaptation</li><li>Feature-layer selection</li><li>Small-data and CPU-friendly systems</li></ul></article>
+</div>
+<div class="callout"><b class="highlight">Important distinction:</b> a publication title shows what was studied, not necessarily every limitation of the method. The research opportunities below are hypotheses to validate through a targeted literature review, not claims that no one has studied them.</div>
+</section>
+
+<section id="problems">
+<div class="eyebrow">02 · Proposed research directions</div><h2>Six research problems worth investigating</h2>
+<p class="section-intro">Each idea is deliberately framed as a testable question with a plausible baseline, evaluation protocol, and potential contribution. Check recent work and dataset licences before claiming novelty or starting experiments.</p>
+<div class="ideas">
+<article class="idea"><div class="num">PROBLEM 01 · HIGH PRIORITY</div><h3>Cross-corpus generalization for dysarthric speaker verification</h3><p><b>Question:</b> Can a verifier trained on one corpus retain identity information on an unseen corpus, microphone, or recording session—without confusing dysarthria severity with identity?</p><div class="meta"><span>Domain generalization</span><span>Speaker verification</span><span>High feasibility</span></div><ul><li>Train on one corpus and test on a disjoint corpus where licensing permits.</li><li>Compare MFCC/LFCC/CQCC, x-vector or ECAPA-style embeddings, and SSL embeddings.</li><li>Report EER, minDCF, calibration, and results by severity / session / channel.</li><li>Test whether augmentation improves unseen-domain performance, not just in-domain scores.</li></ul><p><b>Potential contribution:</b> a reproducible cross-corpus protocol and severity-aware robustness analysis.</p></article>
+<article class="idea"><div class="num">PROBLEM 02 · HIGH IMPACT</div><h3>Few-shot personalized speech recognition for dysarthria</h3><p><b>Question:</b> How many minutes of a person's speech are needed to meaningfully improve recognition, and can adaptation avoid overfitting to a small vocabulary?</p><div class="meta"><span>Personalization</span><span>SSL / PEFT</span><span>Accessibility</span></div><ul><li>Compare frozen encoders, adapters/LoRA, and full fine-tuning.</li><li>Use speaker-disjoint evaluation and learning curves at several data budgets.</li><li>Report WER, intelligibility-sensitive error types, latency, and per-speaker variation.</li><li>Measure whether a language model corrects errors or hallucinates plausible words.</li></ul><p><b>Potential contribution:</b> a data-budget and adaptation recipe that can be reproduced by other labs.</p></article>
+<article class="idea"><div class="num">PROBLEM 03 · DISTINCTIVE</div><h3>Identity-preserving augmentation with quality control</h3><p><b>Question:</b> Which synthetic transformations add useful dysarthric variation while preserving speaker identity and clinically meaningful speech characteristics?</p><div class="meta"><span>Data augmentation</span><span>Voice conversion</span><span>Evaluation toolkit</span></div><ul><li>Compare rate/duration changes, spectral transforms and voice-conversion samples.</li><li>Score synthetic data for speaker similarity, phonetic coverage and artefacts.</li><li>Train with quality-filtered versus unfiltered synthetic data.</li><li>Run ablations to separate data volume from data quality.</li></ul><p><b>Potential contribution:</b> an augmentation acceptance test based on downstream benefit, not visual/audio plausibility alone.</p></article>
+<article class="idea"><div class="num">PROBLEM 04 · CHILD SPEECH</div><h3>Age-robust, low-resource children's ASR</h3><p><b>Question:</b> Can adult-pretrained speech models be adapted to children across age bands and accents using little labelled child speech?</p><div class="meta"><span>Children's ASR</span><span>Low-resource</span><span>Transfer learning</span></div><ul><li>Compare zero-shot, layer selection, adapters/LoRA, and small-data fine-tuning.</li><li>Use age- and speaker-disjoint splits to avoid leakage.</li><li>Report WER by age, accent, noise and utterance length.</li><li>Compare synthetic child-like speech carefully; synthetic data must not replace held-out real-child evaluation.</li></ul><p><b>Potential contribution:</b> an age-aware adaptation strategy and an honest benchmark of data efficiency.</p></article>
+<article class="idea"><div class="num">PROBLEM 05 · TRUST & SAFETY</div><h3>Calibrated and spoof-aware voice biometrics for atypical speech</h3><p><b>Question:</b> How reliable are dysarthric speaker verification scores under replay, voice conversion, generated speech, and out-of-domain conditions?</p><div class="meta"><span>Anti-spoofing</span><span>Calibration</span><span>Security</span></div><ul><li>Build a threat model before collecting or synthesizing attack samples.</li><li>Evaluate genuine, impostor, replay and synthetic trials separately.</li><li>Measure EER alongside minDCF, calibration and attack-specific error rates.</li><li>Study accessible fallback paths when confidence is low; never treat a score as proof of identity.</li></ul><p><b>Potential contribution:</b> a threat-aware evaluation protocol for voice biometrics involving atypical speech.</p></article>
+<article class="idea"><div class="num">PROBLEM 06 · SIGNAL PROCESSING × SSL</div><h3>Explainable acoustic–foundation-model fusion</h3><p><b>Question:</b> Do interpretable cues—prosody, spectral tilt, cepstral features, voice quality—complement SSL embeddings, and under which conditions?</p><div class="meta"><span>Feature fusion</span><span>Interpretability</span><span>Signal processing</span></div><ul><li>Compare handcrafted features, SSL layers, score fusion and learned fusion.</li><li>Use controlled perturbations and feature ablations to test what the model relies on.</li><li>Analyse robustness to noise, channel, rate and severity.</li><li>Track model size, CPU latency and memory use alongside accuracy.</li></ul><p><b>Potential contribution:</b> evidence-based fusion rather than adding features without explaining their value.</p></article>
+</div>
+</section>
+
+<section id="plan">
+<div class="eyebrow">03 · From idea to paper</div><h2>A practical 12-week pilot</h2>
+<p class="section-intro">A manageable starting point is Problem 01 or Problem 03 because both build directly on the existing dysarthric speaker-verification line and can begin with public datasets, subject to each dataset's terms.</p>
+<div class="flow">
+<div class="phase"><b>Weeks 1–2 · Verify</b><p>Read the closest papers, write a one-page gap statement, verify data access and ethics requirements, and define the target claim.</p></div>
+<div class="phase"><b>Weeks 3–4 · Baseline</b><p>Reproduce a simple baseline; lock speaker-disjoint splits and preprocessing; record compute and data provenance.</p></div>
+<div class="phase"><b>Weeks 5–8 · Test</b><p>Run one main intervention and targeted ablations. Use multiple seeds where feasible and preserve a held-out test set.</p></div>
+<div class="phase"><b>Weeks 9–12 · Validate</b><p>Analyse failures and subgroup performance, test robustness, document limitations, and prepare a reproducible paper/code release.</p></div>
+</div>
+<h3 style="margin-top:28px">Recommended experimental checklist</h3>
+<table><thead><tr><th>Dimension</th><th>Minimum practice</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td>Data split</td><td>Speaker-disjoint train/validation/test; disclose corpus and session split</td><td>Prevents identity leakage and inflated performance</td></tr>
+<tr><td>Metrics</td><td>ASV: EER + minDCF/calibration; ASR: WER + subgroup breakdown</td><td>A single average score can hide failure modes</td></tr>
+<tr><td>Comparisons</td><td>Strong baseline, proposed method, ablations, and multiple seeds if feasible</td><td>Shows what actually caused the gain</td></tr>
+<tr><td>Robustness</td><td>Severity, age, channel, noise, duration and corpus shift where data supports it</td><td>Tests whether gains survive realistic variation</td></tr>
+<tr><td>Reproducibility</td><td>Config files, fixed splits, dependency versions, model cards and data licences</td><td>Makes results auditable and reusable</td></tr>
+<tr><td>Ethics</td><td>Consent, privacy, access control, careful language about disability</td><td>Speech can reveal identity and sensitive information</td></tr>
+</tbody></table>
+</section>
+
+<section id="references">
+<div class="eyebrow">04 · Evidence & further reading</div><h2>Selected sources</h2>
+<p class="section-intro">These sources support the profile themes and show that several adjacent directions are active research areas. Novelty must be judged against the closest work, not inferred from a short webpage review.</p>
+<div class="sources">
+<div class="source"><h3>Researcher profile</h3><p>Google Scholar profile for publication discovery.</p><a href="https://scholar.google.com/citations?user=HttYbpQAAAAJ&hl=en" target="_blank" rel="noopener">Open Google Scholar ↗</a></div>
+<div class="source"><h3>Voice biometrics for dysarthria (2026)</h3><p>Temporal discriminative feature embedding and a TKAN-based dysarthria classifier.</p><a href="https://doi.org/10.1016/j.dsp.2025.105662" target="_blank" rel="noopener">Digital Signal Processing · DOI ↗</a></div>
+<div class="source"><h3>Multitaper LFCC + voice conversion (2024)</h3><p>Work on dysarthric speaker verification using acoustic features and augmented data.</p><a href="https://doi.org/10.1109/TIFS.2024.3484661" target="_blank" rel="noopener">IEEE TIFS · DOI ↗</a></div>
+<div class="source"><h3>Feature fusion for dysarthric SV (2024)</h3><p>MFCC/LFCC fusion, out-of-domain augmentation, and severity-wise evaluation.</p><a href="https://doi.org/10.1016/j.specom.2024.103070" target="_blank" rel="noopener">Speech Communication · DOI ↗</a></div>
+<div class="source"><h3>Dysarthric speech technology review (2025)</h3><p>Overview of automatic recognition and assessment of dysarthric speech.</p><a href="https://doi.org/10.1044/2024_JSLHR-23-00740" target="_blank" rel="noopener">JSLHR review · DOI ↗</a></div>
+<div class="source"><h3>SSL for dysarthric and elderly ASR (2024)</h3><p>Studies self-supervised models and features under in-domain data scarcity.</p><a href="https://doi.org/10.1109/TASLP.2024.3422839" target="_blank" rel="noopener">IEEE/ACM TASLP · DOI ↗</a></div>
+<div class="source"><h3>Children's ASR and SSL features (2025)</h3><p>Layer-wise SSL representations for zero-shot children's ASR.</p><a href="https://www.isca-archive.org/interspeech_2025/sinha25_interspeech.html" target="_blank" rel="noopener">Interspeech 2025 paper ↗</a></div>
+<div class="source"><h3>Children's speech transferability (2026)</h3><p>Comparison of SSL model layers for ASR, keyword spotting and speaker attributes.</p><a href="https://doi.org/10.1016/j.specom.2026.103392" target="_blank" rel="noopener">Speech Communication · DOI ↗</a></div>
+</div>
+<div class="callout"><b class="highlight">Research integrity note:</b> This is a proposed research-roadmap site, not an official institutional page. It does not assert that the listed ideas are novel, validated, or endorsed by the profile owner. Before publication, confirm the intended author identity, add verified institutional contact details, and revise the ideas after a systematic literature review.</div>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><b>Inclusive Speech Intelligence</b><p>Research roadmap · Static GitHub Pages template · Edit this file to personalize the site. No tracking, server, or build step required.</p><p class="small">Built as a research-planning starting point. Publication records and literature links were checked on 4 November 2026; links and the state of the literature may change.</p></div></footer>
+</body></html>
